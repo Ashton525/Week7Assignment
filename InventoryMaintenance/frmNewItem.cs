@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace InventoryMaintenance
+﻿namespace InventoryMaintenance
 {
     public partial class frmNewItem : Form
     {
@@ -15,52 +7,46 @@ namespace InventoryMaintenance
             InitializeComponent();
         }
 
-        // TODO: Declare a variable that declares a new InvItem object and set it to null.
-        // Hint: Make it public so frmInvMaint can access the item after this form closes.
-        public InvItem invItem = null;
+        private InventoryItem item = null!;
 
-        // TODO: Create a method that shows this form as a dialog window
-        //       and then returns the new InvItem created by the user.
-        // Hint: Use this.ShowDialog() to display the form.
-        public InvItem GetNewItem()
+        public InventoryItem GetNewItem()
         {
             this.ShowDialog();
-            return invItem;
+            return item;
         }
 
-
-
-        // Ashton Cashier
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (IsValidData())
             {
-                // TODO: Create a new InvItem object using the values from the text boxes.
-                //       - Convert txtItemNo.Text to an int
-                //       - Use txtDescription.Text as the description
-                //       - Convert txtPrice.Text to a decimal
-                // TODO: Assign the new object to the item variable.
-                // TODO: Close the form after saving the item.
-                int itemNo = Convert.ToInt32(txtItemNo.Text);
-                string description = txtDescription.Text;
-                decimal price = Convert.ToDecimal(txtPrice.Text);
-
-                InvItem newItem = new InvItem(itemNo, description, price);
-                invItem = newItem;
+                item = new(
+                    Convert.ToInt32(txtItemNo.Text),
+                    txtDescription.Text,
+                    Convert.ToDecimal(txtPrice.Text)
+                );
                 this.Close();
             }
         }
 
         private bool IsValidData()
         {
-            return Validator.IsPresent(txtItemNo) &&
-                   Validator.IsInt32(txtItemNo) &&
-                   Validator.IsPresent(txtDescription) &&
-                   Validator.IsPresent(txtPrice) &&
-                   Validator.IsDecimal(txtPrice);
+            bool success = true;
+            string errorMessage = "";
+
+            errorMessage += Validator.IsPresent(txtItemNo.Text, "Item no");
+            errorMessage += Validator.IsInt32(txtItemNo.Text, "Item no");
+            errorMessage += Validator.IsPresent(txtDescription.Text, "Description");
+            errorMessage += Validator.IsPresent(txtPrice.Text, "Price");
+            errorMessage += Validator.IsDecimal(txtPrice.Text, "Price");
+
+            if (errorMessage != "")
+            {
+                success = false;
+                MessageBox.Show(errorMessage, "Entry Error");
+            }
+            return success;
         }
 
-        // Ashton Cashier
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

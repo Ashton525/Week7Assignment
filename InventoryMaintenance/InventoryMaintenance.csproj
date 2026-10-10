@@ -9,9 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="InventoryItems.xml">
+    <None Remove="InventoryItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InventoryItems.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
 
 </Project>

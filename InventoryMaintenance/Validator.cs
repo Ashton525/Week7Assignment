@@ -1,71 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-
 namespace InventoryMaintenance
 {
-	public static class Validator
-	{
-		private static string title = "Entry Error";
-		public static string Title
-		{
-			get => title;
-			set => title = value;
-		}
+    public static class Validator
+    {
+        public static string LineEnd { get; set; } = "\n";
 
-		public static bool IsPresent(TextBox textBox)
-		{
-			if (textBox.Text == "")
-			{
-				MessageBox.Show(textBox.Tag + " is a required field.", Title);
-				textBox.Focus();
-				return false;
-			}
-			return true;
-		}
+        public static string IsPresent(string value, string name)
+        {
+            string msg = "";
+            if (value == "")
+            {
+                msg = $"{name} is a required field.{LineEnd}";
+            }
+            return msg;
+        }
 
-		public static bool IsDecimal(TextBox textBox)
-		{
-			decimal number = 0m;
-			if (Decimal.TryParse(textBox.Text, out number))
-			{
-				return true;
-			}
-			else
-			{
-				MessageBox.Show(textBox.Tag + " must be a decimal value.", Title);
-				textBox.Focus();
-				return false;
-			}
-		}
+        public static string IsDecimal(string value, string name)
+        {
+            string msg = "";
+            if (!Decimal.TryParse(value, out _))
+            {
+                msg = $"{name} must be a valid decimal value.{LineEnd}";
+            }
+            return msg;
+        }
 
-		public static bool IsInt32(TextBox textBox)
-		{
-			int number = 0;
-			if (Int32.TryParse(textBox.Text, out number))
-			{
-				return true;
-			}
-			else
-			{
-				MessageBox.Show(textBox.Tag + " must be an integer.", Title);
-				textBox.Focus();
-				return false;
-			}
-		}
+        public static string IsInt32(string value, string name)
+        {
+            string msg = "";
+            if (!Int32.TryParse(value, out _))
+            {
+                msg = $"{name} must be a valid integer value.{LineEnd}";
+            }
+            return msg;
+        }
 
-		public static bool IsWithinRange(TextBox textBox, decimal min, decimal max)
-		{
-			decimal number = Convert.ToDecimal(textBox.Text);
-			if (number < min || number > max)
-			{
-				MessageBox.Show(textBox.Tag + " must be between " + min
-					+ " and " + max + ".", Title);
-				textBox.Focus();
-				return false;
-			}
-			return true;
-		}
-	}
+        public static string IsWithinRange(string value, string name, decimal min,
+            decimal max)
+        {
+            string msg = "";
+            if (Decimal.TryParse(value, out decimal number))
+            {
+                if (number < min || number > max)
+                {
+                    msg = $"{name} must be between {min} and {max}.{LineEnd}";
+                }
+            }
+            return msg;
+        }
+    }
 }

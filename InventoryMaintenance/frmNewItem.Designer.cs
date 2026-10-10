@@ -28,132 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtItemNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            txtItemNo = new TextBox();
+            txtDescription = new TextBox();
+            label2 = new Label();
+            txtPrice = new TextBox();
+            label3 = new Label();
+            btnSave = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Item no:";
+            label1.AutoSize = true;
+            label1.Location = new Point(18, 18);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(51, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Item no:";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtItemNo
             // 
-            this.txtItemNo.Location = new System.Drawing.Point(96, 14);
-            this.txtItemNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtItemNo.Name = "txtItemNo";
-            this.txtItemNo.Size = new System.Drawing.Size(106, 23);
-            this.txtItemNo.TabIndex = 1;
-            this.txtItemNo.Tag = "Item no";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Description:";
+            txtItemNo.Location = new Point(97, 16);
+            txtItemNo.Margin = new Padding(2, 2, 2, 2);
+            txtItemNo.Name = "txtItemNo";
+            txtItemNo.Size = new Size(106, 23);
+            txtItemNo.TabIndex = 1;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(96, 46);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(257, 23);
-            this.txtDescription.TabIndex = 3;
-            this.txtDescription.Tag = "Description";
+            txtDescription.Location = new Point(97, 46);
+            txtDescription.Margin = new Padding(2, 2, 2, 2);
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(193, 23);
+            txtDescription.TabIndex = 3;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 80);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Price:";
+            label2.AutoSize = true;
+            label2.Location = new Point(18, 48);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Description:";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(96, 78);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(106, 23);
-            this.txtPrice.TabIndex = 5;
-            this.txtPrice.Tag = "Price";
+            txtPrice.Location = new Point(97, 76);
+            txtPrice.Margin = new Padding(2, 2, 2, 2);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(106, 23);
+            txtPrice.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 78);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(36, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Price:";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(96, 119);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 25);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Location = new Point(97, 118);
+            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 6;
+            btnSave.Text = "&Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(206, 119);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 25);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Location = new Point(215, 118);
+            btnCancel.Margin = new Padding(2, 2, 2, 2);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "&Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // frmNewItem
             // 
-            this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(372, 158);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtItemNo);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmNewItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Inventory Item";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new Size(312, 157);
+            ControlBox = false;
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(txtPrice);
+            Controls.Add(label3);
+            Controls.Add(txtDescription);
+            Controls.Add(label2);
+            Controls.Add(txtItemNo);
+            Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "frmNewItem";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "New Inventory Item";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtItemNo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
+        private Label label1;
+        private TextBox txtItemNo;
+        private TextBox txtDescription;
+        private Label label2;
+        private TextBox txtPrice;
+        private Label label3;
+        private Button btnSave;
+        private Button btnCancel;
     }
 }
